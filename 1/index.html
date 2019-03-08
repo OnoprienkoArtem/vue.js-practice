@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <div class="product">
+
+            <div class="product-image">
+                <img v-bind:src="image" v-bind:alt="altText">
+            </div>
+
+            <div class="product-info">
+                <h1>{{ product }}</h1>
+                <p>{{ description }}</p>
+                <ul>
+                    <li v-for="detail in details">{{ detail }}</li>
+                </ul>
+                <a :href="linkMoreAbout">More about car</a>
+
+                <p class="info" v-if="inventory > 10">In Stock</p>
+                <p class="info" v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
+
+                <span v-if="onSale" class="info">On Sale!</span>
+                <p v-else class="info">Out of stock</p>
+
+                <div v-for="variant in variants" :key="variant.variantId" class="color color-box" :style="{ backgroundColor: variant.variantColor }"
+                    @mouseover="updateProduct(variant.variantImg)">
+                </div>
+
+                <div class="cart">
+                    <p>Cart {{ cart }}</p>
+                </div>
+                <div class="btn-block">
+                    <button v-on:click="addToCart">Add</button>
+                    <button @click="removeFromCart">Remove</button>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
