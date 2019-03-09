@@ -7,7 +7,7 @@
     <div class="product-info">
       <h1>{{ title }}</h1>
 
-      <p class="description" v-for="prop in props" :key="prop">{{ prop }}</p>
+      <!-- <p class="description" v-for="prop in props" :key="prop">{{ prop }}</p> -->
 
       <ul class="details">
         <li v-for="detail in details" :key="detail">{{ detail }}</li>
@@ -42,11 +42,11 @@
 
 <script>
 export default {
-  props: ['props-1', 'props-2', 'props-3'],
+  props: ['name', 'description', 'isActive'],
   data() {
     return {
       product: "Car:",
-      description: "Toyota Camry",
+      // description: "Toyota Camry",
       image:
         "https://images.toyota-europe.com/eu/product-token/3f015f85-889c-49de-a01d-438580f6af74/vehicle/81e97c80-f8d3-44b7-baf0-e602c3bae49b/width/555/height/277/padding/0/background-colour/fff/image-quality/70/day-exterior-27_4u3.jpg",
       altText: "Camry",
@@ -90,7 +90,7 @@ export default {
   },
   computed: {
     title() {
-      return `${this.product} ${this.description}`
+      return `${this.name}: ${this.description}`
     }
   }
 };
@@ -127,9 +127,6 @@ h1 {
   margin-bottom: 5px;
 }
 
-.color-group {
-
-}
 
 .out-of-stock {
   text-decoration-line: line-through;
@@ -179,7 +176,7 @@ h1 {
 
 .btn-block button {
   font-size: 10px;
-  width: 30%;
-  margin: auto;
+  width: 20%;
+  margin-right: 10px;
 }
 </style>

@@ -3,7 +3,13 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
-    <about props="Props"/>
+   
+    <about v-for='user in users'
+      :name='user.name'
+      :description='user.description'
+      :key='user.name'
+    />
+
   </div>
 </template>
 
@@ -17,6 +23,16 @@ export default {
   components: {
     HelloWorld,
     about
+  },
+  data () {
+    return {
+      message: 'Hello',
+      users: [
+        {name: 'Camry', description: 'Welcome to business class. '},
+        {name: 'Jack', description: 'This is our manager'},
+        {name: 'John', description: 'This is our client'},
+      ]
+    }
   }
 }
 </script>
