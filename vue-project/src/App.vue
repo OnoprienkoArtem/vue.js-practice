@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 
-    <about msg="Welcome from about components"/>
+    <about props="Props"/>
   </div>
 </template>
 
@@ -20,6 +20,7 @@ export default {
   }
 }
 </script>
+
 
 <style>
 #app {

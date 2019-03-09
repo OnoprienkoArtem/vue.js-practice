@@ -5,10 +5,12 @@
     </div>
 
     <div class="product-info">
-      <h1>{{ product }}</h1>
-      <p>{{ description }}</p>
-      <ul>
-        <li v-for="detail in details">{{ detail }}</li>
+      <h1>{{ title }}</h1>
+
+      <p class="description" v-for="prop in props" :key="prop">{{ prop }}</p>
+
+      <ul class="details">
+        <li v-for="detail in details" :key="detail">{{ detail }}</li>
       </ul>
       <a :href="linkMoreAbout">More about car</a>
 
@@ -16,13 +18,13 @@
       <p class="info" v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
 
       <span v-if="onSale" class="info">On Sale!</span>
-      <p v-else class="info">Out of stock</p>
+      <p v-else class="info out-of-stock">Out of stock</p>
 
       <div class="color-group">
         <div
+          class="color color-box"
           v-for="variant in variants"
           :key="variant.variantId"
-          class="color color-box"
           :style="{ backgroundColor: variant.variantColor }"
           @mouseover="updateProduct(variant.variantImg)"
         ></div>
@@ -40,9 +42,10 @@
 
 <script>
 export default {
+  props: ['props-1', 'props-2', 'props-3'],
   data() {
     return {
-      product: "Car",
+      product: "Car:",
       description: "Toyota Camry",
       image:
         "https://images.toyota-europe.com/eu/product-token/3f015f85-889c-49de-a01d-438580f6af74/vehicle/81e97c80-f8d3-44b7-baf0-e602c3bae49b/width/555/height/277/padding/0/background-colour/fff/image-quality/70/day-exterior-27_4u3.jpg",
@@ -84,6 +87,11 @@ export default {
     removeFromCart() {
       this.cart--;
     }
+  },
+  computed: {
+    title() {
+      return `${this.product} ${this.description}`
+    }
   }
 };
 </script>
@@ -97,8 +105,12 @@ export default {
   display: flex;
 }
 
+.details {
+  font-size: 12px;
+}
+
 .product-image {
-  width: 80%;
+  width: 60%;
   box-shadow: 0px 0px 1px 0px black;
   text-align: center;
   display: flex;
@@ -110,11 +122,17 @@ export default {
 }
 
 h1 {
+  font-size: 14px;
   margin-top: 0;
+  margin-bottom: 5px;
 }
 
 .color-group {
 
+}
+
+.out-of-stock {
+  text-decoration-line: line-through;
 }
 
 .color {
@@ -126,7 +144,7 @@ h1 {
 }
 
 .product-info {
-  width: 20%;
+  width: 40%;
   padding: 0 30px;
   text-align: left;
 }
