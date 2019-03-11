@@ -33,13 +33,13 @@
       <p v-else class="info out-of-stock">Out of stock</p>
 
 
-      <!-- <div class="cart">
+      <div class="cart">
         <p>Cart {{ cart }}</p>
       </div>
       <div class="btn-block">
         <button v-on:click="addToCart" :disabled="!onSale" :class="{ disabledBtn: !onSale }">Add</button>
         <button @click="removeFromCart">Remove</button>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
