@@ -3,6 +3,17 @@
 
     <div class="product-image">
       <img :src="image" alt="altText">
+      <div class="color-group">
+        <div
+          class="color color-box"
+          v-for="variant in variants"
+          :key="variant.variantId"
+          :style="{ backgroundColor: variant.variantColor }"
+          @mouseover="updateProduct(variant.variantImg)"
+        ></div>
+      </div>
+
+
     </div>
 
     <div class="product-info">
@@ -21,24 +32,14 @@
       <span v-if="onSale" class="info">On Sale!</span>
       <p v-else class="info out-of-stock">Out of stock</p>
 
-      <div class="color-group">
 
-        <div
-          class="color color-box"
-          v-for="variant in variants"
-          :key="variant.variantId"
-          :style="{ backgroundColor: variant.variantColor }"
-          @mouseover="updateProduct(variant.variantImg)"
-        ></div>
-
-      </div>
-      <div class="cart">
+      <!-- <div class="cart">
         <p>Cart {{ cart }}</p>
       </div>
       <div class="btn-block">
         <button v-on:click="addToCart" :disabled="!onSale" :class="{ disabledBtn: !onSale }">Add</button>
         <button @click="removeFromCart">Remove</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -81,7 +82,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .product {
+  width: 60%;
+  margin: auto; 
   display: flex;
+  margin-top: 10px;
+  box-shadow: 0px 0px 1px 0px black;
+  padding: 15px; 
+
 }
 
 .details {
@@ -90,7 +97,7 @@ export default {
 
 .product-image {
   width: 60%;
-  box-shadow: 0px 0px 1px 0px black;
+  flex-direction: column;
   text-align: center;
   display: flex;
 }
