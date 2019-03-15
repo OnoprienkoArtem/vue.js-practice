@@ -9,7 +9,8 @@
 			:description="user.description" 
 			:variants="user.variants" 
 			:image="user.carImg" 
-			:key="user.name" />
+			:key="user.name" 
+		/>
 	</div>
 </template>
 
@@ -26,7 +27,8 @@
 		data() {
 			return {
 				message: "Hello",
-				users: [{
+				users: [
+					{
 						name: "Camry",
 						description: "Welcome to business class.",
 						carImg: "https://images.toyota-europe.com/eu/product-token/3f015f85-889c-49de-a01d-438580f6af74/vehicle/81e97c80-f8d3-44b7-baf0-e602c3bae49b/width/555/height/277/padding/0,0,0,0/background-colour/ffffff/day-exterior-27_4u3.jpg",
