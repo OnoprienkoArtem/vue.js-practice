@@ -28,7 +28,7 @@
 			</div>
 			<div class="btn-block">
 				<button v-on:click="addToCart" :disabled="!onSale" :class="{ disabledBtn: !onSale }">Add</button>
-				<button @click="removeFromCart">Remove</button>
+				<button @click="removeFromCart" :disabled="cart == 0">Remove</button>
 			</div>
 		</div>
 	</div>
@@ -36,10 +36,9 @@
 
 <script>
 	export default {
-		props: ['name', 'description', 'image', 'isActive', 'variants', 'linkMore', 'altText', 'details'],
+		props: ['name', 'description', 'image', 'isActive', 'variants', 'linkMore', 'altText', 'details', 'inventory'],
 		data() {
-			return {
-				inventory: 8,
+			return {				
 				onSale: true,				
 				cart: 0
 			};
@@ -139,8 +138,9 @@
 	
 	.info {
 		margin: 0;
-		color: tomato;
+		color: greenyellow;
 		font-size: 12px;
+		font-weight: 700;
 	}
 
 	.cart p {

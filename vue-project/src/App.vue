@@ -11,6 +11,7 @@
 			:linkMore="user.linkMoreAbout"
 			:altText="user.altText"
 			:details="user.details"
+			:inventory="user.inventory"
 		/>
 	</div>
 </template>
@@ -35,6 +36,7 @@
 						details: ["16 alloy wheels (10-spoke)", "Chrome insert on upper front grille", "Shark-fin antenna"],
 						carImg: "https://images.toyota-europe.com/eu/product-token/3f015f85-889c-49de-a01d-438580f6af74/vehicle/81e97c80-f8d3-44b7-baf0-e602c3bae49b/width/555/height/277/padding/0,0,0,0/background-colour/ffffff/day-exterior-27_4u3.jpg",
 						altText: "Camry",
+						inventory: 25,
 						linkMoreAbout: "https://www.toyota-europe.com/new-cars/camry/",
 						variants: [{
 								variantId: 1,
@@ -59,6 +61,7 @@
 						details: ["Puddle lamps on door mirrors", "Power roof opening", "Moon roof"],
 						carImg: "https://images.toyota-europe.com/eu/product-token/53fe61a6-bda4-4267-a331-d1146101f186/vehicle/539e2a72-0876-4fdf-af1c-5cf94b5d2dcc/width/555/height/277/padding/0/background-colour/fff/image-quality/70/day-exterior-27_221.jpg",
 						altText: "Land Cruiser",
+						inventory: 15,
 						linkMoreAbout: "https://www.toyota-europe.com/new-cars/land-cruiser/",
 						variants: [{
 								variantId: 1,
@@ -83,6 +86,7 @@
 						details: ["Toyota Touch® 2 multimedia system", "Daytime running lights", "Cruise control"],
 						carImg: "https://images.toyota-europe.com/eu/product-token/2ba43007-03d6-4849-ab07-0db1b2180d98/vehicle/efd9dd5d-d625-4768-8466-e666a3eba32d/width/555/height/277/padding/0/background-colour/fff/image-quality/70/day-exterior-27_218.jpg",
 						altText: "Land Cruiser V8",
+						inventory: 5,
 						linkMoreAbout: "https://www.toyota-europe.com/new-cars/land-cruiser-v8/",
 						variants: [{
 								variantId: 1,
