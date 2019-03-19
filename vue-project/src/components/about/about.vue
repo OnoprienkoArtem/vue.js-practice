@@ -82,14 +82,17 @@
 	}
 	
 	.details {
-		font-size: 12px;
+		font-size: 10px;
 		padding-left: 16px;
+		margin: 5px 0;
 	}
 
 	.link-more {
 		font-size: 12px;
 		font-style: italic;		
 		color: blueviolet;
+		display: block;
+		margin-bottom: 5px;
 	}
 	
 	.product-image {
@@ -138,6 +141,10 @@
 		margin: 0;
 		color: tomato;
 		font-size: 12px;
+	}
+
+	.cart p {
+		margin: 5px 0;
 	}
 	
 	.color-box {
