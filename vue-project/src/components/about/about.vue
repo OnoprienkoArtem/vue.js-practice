@@ -61,6 +61,10 @@
 				this.cart++;
 			},
 			removeFromCart() {
+				if (this.cart <= 0) {
+					this.cart = 0;
+					return;
+				}
 				this.cart--;
 			},
 			updateProduct(variantImg) {
@@ -81,7 +85,7 @@
 
 <style scoped>
 	.product {
-		width: 60%;
+		width: 40%;
 		margin: auto;
 		display: flex;
 		margin-top: 10px;
@@ -94,14 +98,14 @@
 	}
 	
 	.product-image {
-		width: 60%;
+		width: 70%;
 		flex-direction: column;
 		text-align: center;
 		display: flex;
 	}
 	
 	.product-image img {
-		width: 80%;
+		width: 100%;
 		margin: auto;
 	}
 	
@@ -124,8 +128,8 @@
 	}
 	
 	.product-info {
-		width: 40%;
-		padding: 0 30px;
+		
+		padding-left: 30px;
 		text-align: left;
 	}
 	
@@ -134,15 +138,8 @@
 		border: none;
 		color: #fff;
 		cursor: not-allowed;
-	}
-	
-	.btn-block {
-		display: flex;
-	}
-	
-	.btn-block button {
-		width: 50%;
-	}
+	}	
+
 	
 	.info {
 		color: tomato;
@@ -156,10 +153,14 @@
 		margin-right: 10px;
 		display: inline-block;
 	}
+
+	.btn-block {
+		display: flex;
+	}
 	
 	.btn-block button {
 		font-size: 10px;
-		width: 20%;
+		width: auto;
 		margin-right: 10px;
 	}
 </style>
