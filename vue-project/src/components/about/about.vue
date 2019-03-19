@@ -1,9 +1,7 @@
 <template>
-	<div class="product">
-	
+	<div class="product">	
 		<div class="product-image">
-			<img :src="image" alt="altText">
-	
+			<img :src="image" :alt="altText">	
 			<div class="color-group">
 				<div class="color color-box" 
 					v-for="variant in variants" 
@@ -13,25 +11,18 @@
 					>
 				</div>
 			</div>
-	
-	
 		</div>
 	
 		<div class="product-info">
-			<h1>{{ title }}</h1>
-	
+			<h1>{{ title }}</h1>	
 			<ul class="details">
 				<li v-for="detail in details" :key="detail">{{ detail }}</li>
 			</ul>
-			<a :href="linkMoreAbout">More about car</a>
-	
+			<a :href="linkMore" target="_blank" class="link-more">More about car</a>	
 			<p class="info" v-if="inventory > 10">In Stock</p>
-			<p class="info" v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
-	
+			<p class="info" v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>	
 			<span v-if="onSale" class="info">On Sale!</span>
 			<p v-else class="info out-of-stock">Out of stock</p>
-	
-	
 			<div class="cart">
 				<p>Cart {{ cart }}</p>
 			</div>
@@ -45,14 +36,11 @@
 
 <script>
 	export default {
-		props: ['name', 'description', 'image', 'isActive', 'variants'],
+		props: ['name', 'description', 'image', 'isActive', 'variants', 'linkMore', 'altText', 'details'],
 		data() {
 			return {
-				altText: "Camry",
-				linkMoreAbout: "https://www.toyota-europe.com/new-cars/camry/",
 				inventory: 8,
-				onSale: true,
-				details: ["Exterior view", "Other features", "X-Ray Safety"],
+				onSale: true,				
 				cart: 0
 			};
 		},
@@ -85,7 +73,7 @@
 
 <style scoped>
 	.product {
-		width: 40%;
+		max-width: 500px;
 		margin: auto;
 		display: flex;
 		margin-top: 10px;
@@ -95,6 +83,13 @@
 	
 	.details {
 		font-size: 12px;
+		padding-left: 16px;
+	}
+
+	.link-more {
+		font-size: 12px;
+		font-style: italic;		
+		color: blueviolet;
 	}
 	
 	.product-image {
@@ -127,8 +122,7 @@
 		margin: 5px 0;
 	}
 	
-	.product-info {
-		
+	.product-info {		
 		padding-left: 30px;
 		text-align: left;
 	}
@@ -139,9 +133,9 @@
 		color: #fff;
 		cursor: not-allowed;
 	}	
-
 	
 	.info {
+		margin: 0;
 		color: tomato;
 		font-size: 12px;
 	}
