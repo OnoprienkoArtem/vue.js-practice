@@ -127,6 +127,7 @@
 	.product-info {		
 		padding-left: 30px;
 		text-align: left;
+		width: min-content;
 	}
 	
 	.disabledBtn {
@@ -160,8 +161,17 @@
 	}
 	
 	.btn-block button {
+		cursor: pointer;
 		font-size: 10px;
-		width: auto;
+		height: 20px;
+		color: #fff;
+		font-weight: 700;
+		width: 70px;
 		margin-right: 10px;
+		border: none;
+		background: tomato;
+	}
+	.btn-block button:disabled {
+		opacity: .5;
 	}
 </style>
