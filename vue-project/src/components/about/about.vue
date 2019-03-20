@@ -31,12 +31,16 @@
 				<button @click="removeFromCart" :disabled="cart == 0">Remove</button>
 			</div>
 		</div>
+
+		<div>
+			{{ users }}
+		</div>
 	</div>
 </template>
 
 <script>
 	export default {
-		props: ['name', 'description', 'image', 'isActive', 'variants', 'linkMore', 'altText', 'details', 'inventory'],
+		props: ['name', 'description', 'image', 'isActive', 'variants', 'linkMore', 'altText', 'details', 'inventory', 'users'],
 		data() {
 			return {				
 				onSale: true,				
@@ -45,7 +49,7 @@
 		},
 		methods: {
 			addToCart() {
-				this.cart++;
+				this.cart++;				
 			},
 			removeFromCart() {
 				if (this.cart <= 0) {

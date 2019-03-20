@@ -2,6 +2,7 @@
 	<div id="app">		
 		<Header msg="Welcome to Vue.js App" />	
 		<about 
+			:users="users"
 			v-for="user in users" 
 			:name="user.name" 
 			:description="user.description" 
