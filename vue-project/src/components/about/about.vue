@@ -32,8 +32,8 @@
 			</div>
 		</div>
 
-		<div>
-			{{ users }}
+		<div v-for="user in users" :key="user">
+			{{ user.name }}
 		</div>
 	</div>
 </template>
