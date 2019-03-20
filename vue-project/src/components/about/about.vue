@@ -75,7 +75,7 @@
 		max-width: 500px;
 		margin: auto;
 		display: flex;
-		margin-top: 10px;
+		margin-top: 20px;
 		box-shadow: 0px 0px 1px 0px black;
 		padding: 15px;
 	}
