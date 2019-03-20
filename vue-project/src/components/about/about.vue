@@ -89,9 +89,7 @@
 	.link-more {
 		font-size: 12px;
 		font-style: italic;		
-		color: blueviolet;
-		display: block;
-		margin-bottom: 5px;
+		color: blueviolet;		
 	}
 	
 	.product-image {
@@ -169,7 +167,8 @@
 		width: 70px;
 		margin-right: 10px;
 		border: none;
-		background: tomato;
+		background: #00c381;
+		outline: none;
 	}
 	.btn-block button:disabled {
 		opacity: .5;
